@@ -24,19 +24,19 @@
             {% import _self as macros %}
             <ul>
                 <li>
-                    <a href="#">{{ root.userName }}<br>
-                        {{ root.creditsLeft }}<br>
-                        {{ root.creditsRight }}</a>
-                    {% if childLeft is not null %}
+                    <a href="#">Username - {{ root.userName }}<br>
+                        CreditsLeft - {{ root.creditsLeft }}<br>
+                        CreditsRight - {{ root.creditsRight }}</a>
+                    {% if root.childLeft is not null %}
                         {{ macros.tree_node(root.childLeft) }}
                     {% endif %}
-                    {% if childRight is not null %}
+                    {% if root.childRight is not null %}
                         {{ macros.tree_node(root.childRight) }}
                     {% endif %}
-                    {% for link in links %}
                 </li>
             </ul>
             {% endmacro %}
+            {{ _self.tree_node(root) }}
         </div>
     </div>
 {% endblock %}

@@ -9,13 +9,13 @@ class NodesFixture extends AbstractFixture
     /**
      * Chances for left and right child
      */
-    private const LEFT_CHANCE = 97;
+    private const LEFT_CHANCE = 98;
     private const RIGHT_CHANCE = 99;
 
     /**
      * Safe switch to prevent using a lot of memory
      */
-    private const MEMORY_LIMIT = 1000;
+    private const MEMORY_LIMIT = 100;
 
     /**
      * @var string[]

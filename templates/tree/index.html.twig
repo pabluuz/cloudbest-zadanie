@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TreeController!{% endblock %}
+
+{% block body %}
+    <style>
+        .example-wrapper {
+            margin: 1em auto;
+            max-width: 800px;
+            width: 95%;
+            font: 18px/1.5 sans-serif;
+        }
+
+        .example-wrapper code {
+            background: #F5F5F5;
+            padding: 2px 6px;
+        }
+    </style>
+
+    <div class="example-wrapper">
+        <h1>Binary Tree</h1>
+        <div class="tree">
+            {% macro tree_node(root) %}
+            {% import _self as macros %}
+            <ul>
+                <li>
+                    <a href="#">{{ root.userName }}<br>
+                        {{ root.creditsLeft }}<br>
+                        {{ root.creditsRight }}</a>
+                    {% if childLeft is not null %}
+                        {{ macros.tree_node(root.childLeft) }}
+                    {% endif %}
+                    {% if childRight is not null %}
+                        {{ macros.tree_node(root.childRight) }}
+                    {% endif %}
+                    {% for link in links %}
+                </li>
+            </ul>
+            {% endmacro %}
+        </div>
+    </div>
+{% endblock %}
